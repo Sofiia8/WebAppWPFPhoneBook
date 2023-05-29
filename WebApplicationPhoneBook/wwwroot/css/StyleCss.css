@@ -1,0 +1,52 @@
+﻿.fontStyle {
+    color: darkgoldenrod;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+/*    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+*/}
+.fontStyleHeader {
+    color: black;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+}
+.fontStyleTable {
+    color: darkblue;
+    font-size: 15px;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /*    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+*/
+}
+.gradient-button {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+}
+
+    .gradient-button:hover {
+        background-position: right center;
+    }

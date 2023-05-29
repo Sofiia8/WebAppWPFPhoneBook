@@ -1,0 +1,33 @@
+﻿@model WebApplicationPhoneBook.Models.Person
+@{
+    ViewBag.Title = "Подробно";
+    Person person = Model;
+}
+
+<html>
+    <body>
+    <div class="panel panel-primary">
+        <h2>Подробно</h2>
+            <table class="table table-striped">
+                <tr>
+                     <th>ID</th>
+                     <th>Фамилия</th>
+                     <th>Имя</th>
+                     <th>Отчество</th>
+                     <th>Номер телефона</th>
+                     <th>Адрес</th>
+                     <th>Описание</th>
+                </tr>
+                <tr>
+                     <td>@person.ID</td>
+                     <td>@person.Surname</td>
+                     <td>@person.Name</td>
+                     <td>@person.Secondname</td>
+                     <td>@person.Phonenum</td>
+                     <td>@person.Address</td>
+                     <td>@person.Description</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

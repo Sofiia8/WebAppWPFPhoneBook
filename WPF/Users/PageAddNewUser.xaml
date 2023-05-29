@@ -1,0 +1,65 @@
+﻿<Page x:Class="WPF.Users.PageAddNewUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF.Users"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAddNewUser">
+
+    <Grid MaxHeight="300" MaxWidth="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Margin="5" FontSize="22" FontFamily="Alef" Grid.Column="0" Grid.Row="0">Задайте Имя:</TextBlock>
+        <TextBlock Margin="5" FontSize="22" FontFamily="Alef" Grid.Column="0" Grid.Row="1">Задайте Пароль:</TextBlock>
+
+        <TextBox Name="NameBox" Grid.Column="1" Grid.Row="0" Margin="5" FontSize="22" BorderBrush="Gray" BorderThickness="1" >
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox Name="PasswordBox" Grid.Column="1" Grid.Row="1" Margin="5" FontSize="22" BorderBrush="Gray" BorderThickness="1" >
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <!--<PasswordBox Name="PasswordBox" PasswordChar="*" Grid.Column="1" Grid.Row="1" Margin="5" FontSize="22" >
+            <PasswordBox.Template>
+                <ControlTemplate TargetType="PasswordBox">
+                    <Border Background="White" CornerRadius="10" BorderBrush="Gray" BorderThickness="1" >
+                        <ScrollViewer x:Name="PART_ContentHost" />
+                    </Border>
+                </ControlTemplate>
+            </PasswordBox.Template>
+        </PasswordBox>-->
+
+        <WrapPanel HorizontalAlignment="Center" Margin="10,10,10,10" Grid.Column="1" Grid.Row="3" Width="70" VerticalAlignment="Top" >
+            <Button Content="OK" IsDefault="True" MinWidth="60" Margin="0,0,10,0" Height="40" Click="Button_Click" FontSize="18">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+        </WrapPanel>
+    </Grid>
+</Page>

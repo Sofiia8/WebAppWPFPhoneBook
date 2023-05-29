@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebApplicationPhoneBook.Models.Person>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <body>
+    <div class="panel panel-primary">
+        <h2>Телефонная книга</h2>
+        <table class="table table-striped">
+            <tr @*class="fontStyleHeader"*@>
+                <th>ID</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (var pers in Model)
+            {
+            <tr >
+                <td><a href="~/Home/Details/@pers.ID">@pers.ID</a></td>
+                <td>@pers.Surname</td>
+                <td>@pers.Name</td>
+                <td>@pers.Secondname</td>
+                    
+                <td>
+                    <form action="~/Home/DeleteRecord/@pers.ID" method="post">
+                         <input class="btn btn-outline-danger" type="submit" value="Удалить запись" />
+                    </form>
+                </td>
+                <td>
+                    <form action="~/Home/EditRecord/@pers.ID">
+                         <input class="btn btn-outline-success" type="submit" value="Редактировать запись" />
+                    </form>
+                </td>
+            </tr>
+            }
+        </table>
+        <br/>
+    </div>
+    </body>
+</html>

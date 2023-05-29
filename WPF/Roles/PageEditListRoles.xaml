@@ -1,0 +1,78 @@
+﻿<Page x:Class="WPF.Roles.PageEditListRoles"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF.Roles"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageEditListRoles" Loaded="Page_Loaded">
+
+    <Grid >
+        <StackPanel HorizontalAlignment="Stretch">
+            <DataGrid x:Name="roleList" CanUserAddRows="False" AutoGenerateColumns="False" HorizontalAlignment="Stretch" 
+                 VerticalAlignment="Stretch" Margin="0" FontSize="20" FontWeight="Bold" BorderBrush="#FF02060B"
+                 ColumnHeaderHeight="95" >
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        <Setter Property="Height" Value="40"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF807979" Offset="0.035"/>
+                        <GradientStop Color="#FFF0E1E1" Offset="0.674"/>
+                        <GradientStop Color="#FFE0D3D3" Offset="0.531"/>
+                    </LinearGradientBrush>
+                </DataGrid.Background>
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Width="200">
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding RoleName}" FontSize="18" FontWeight="Normal" Width="200" IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="Имя роли" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridCheckBoxColumn Width="200" Header="Активен"  >
+                        <DataGridCheckBoxColumn.ElementStyle>
+                            <Style TargetType="{x:Type CheckBox}">
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="Margin" Value="4,2,4,8"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.3" ScaleY="1.3"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="IsChecked" Value="{Binding IsAvailable}"/>
+                            </Style>
+                        </DataGridCheckBoxColumn.ElementStyle>
+                        <DataGridCheckBoxColumn.Binding>
+                            <Binding Path="IsAvailable" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+                        </DataGridCheckBoxColumn.Binding>
+                    </DataGridCheckBoxColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Height="70" VerticalAlignment="Bottom">
+                <Button Content="СОХРАНИТЬ" Background="LightGreen" IsDefault="True" MinWidth="120" MaxWidth="150" Margin="80,25,80,7" Height="40" Click="ButtonSaveRolesClick" FontSize="14">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

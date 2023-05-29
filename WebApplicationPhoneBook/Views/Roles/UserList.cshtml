@@ -1,0 +1,18 @@
+﻿@model IEnumerable<WebApplicationPhoneBook.Models.User>
+@{
+    ViewBag.Title = "Список пользователей c правами доступа";
+}
+
+<h2>Список пользователей c правами доступа</h2>
+
+<table class="table">
+    @foreach (var user in Model)
+    {
+            <tr>
+                <td>@user.UserName</td>
+                <td>
+                <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-userid="@user.Id" asp-route-username="@user.UserName">Права доступа</a>
+                </td>
+            </tr>
+    }
+</table>
